@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    char str[200];
+    int freq[256] = {0};
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    for (int i = 0; str[i] != '\0'; i++) freq[(unsigned char)str[i]]++;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (freq[(unsigned char)str[i]] == 1) {
+            printf("First non-repeating character: %c\n", str[i]);
+            return 0;
+        }
+    }
+    printf("No unique character found\n");
+    return 0;
+}
